@@ -4,32 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, inicial-scale=1.0">
-    <title>MEVir - Home</title>
+    <title>EVir - Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
-        <img src="assets/images/logo-mevir.png" alt="Logo de 'Minha Estante Virtual'">
-        <h1>MEVir</h1>
+        <div class="logo">
+        <nav>
+            <a href="index.html">
+                <img src="assets/images/logo-mevir.png" alt="Logo de 'Minha Estante Virtual'">
+                <h1>EVir</h1>
+            </a>
+        </nav>
+        </div>
+
+        <nav>
+            <a href="pages/add-book.html">
+                <button class="add-button" aria-label="Adicione um novo livro">+</button>
+            </a>
+        </nav>
     </header>
 
     <main>
         <div class="livros-container">
 
             <div class="livros-card">
-                <img class="poster" src="assets/images/amanhecer-na-colheita.png" alt="Capa do Livro 'Amanhecer na Colheita'">
-                <h2 class="titulo">Título do Livro</h2>
-                <p class="autor"><b>Por:</b> Suzanne Collins</p>
-                <p class="rating">★★★★★ 5</p>
-            </div>
+                <a href="pages/details-padrao.html">
+                    <img src="assets/images/amanhecer-na-colheita.png" alt="Capa do Livro 'Amanhecer na Colheita', por Suzanne Collins">
+                    <h3>Amanhecer na Colheita</h3>
+                    <p class="autor"><i>Por: Suzanne Collins</i></p>
+                    <p class="rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> 5</p>
+                </a>
+            </div> 
 
+            <div class="livros-card">
+                <a href="pages/details-padrao.html">
+                    <img src="assets/images/com-a-morta-no-porao.jpg" alt="Capa do Livro 'Com a Morta no Porão', por Eduardo Rodrigues">
+                    <h3>Com a Morta no Porão</h3>
+                    <p class="autor"><i>Por: Eduardo Rodrigues</i></p>
+                    <p class="rating"><span>★</span><span>★</span><span>★</span><span>★</span><span class="empty-star">★</span></p>
+                </a>
+            </div> 
+
+            <div class="livros-card">
+                <a href="pages/details-padrao.html">
+                    <img src="assets/images/romeu-e-julieta.jpg" alt="Capa do Livro 'Romeu e Julieta', por William Shakespeare">
+                    <h3>Romeu e Julieta</h3>
+                    <p class="autor"><i>Por: William Shakespeare</i></p>
+                    <p class="rating"><span>★</span><span>★</span><span class="empty-star">★</span><span class="empty-star">★</span><span class="empty-star">★</span></p>
+                </a>
+            </div> 
+
+            <div class="livros-card">
+                <a href="pages/details-padrao.html">
+                    <img src="assets/images/dia-do-cachorro-azul.jpg" alt="Capa do Livro 'O dia do cachorro azul', por Serge Brussolo">
+                    <h3>O dia do cachorro azul</h3>
+                    <p class="autor"><i>Por: Serge Brussolo</i></p>
+                    <p class="rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+                </a>
+            </div> 
 
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 MEVir &ndash; Minha Estante Virtual</p>
+        <a class="link-repositorio" href="https://github.com/Some-one48/minha-estante-virtual" target="_blank">Repositório no GitHub</a>
+        <p>&copy; 2025 EVir &ndash; Minha Estante Virtual</p>
     </footer>
 </body>
 

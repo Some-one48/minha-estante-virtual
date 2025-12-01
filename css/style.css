@@ -1,8 +1,22 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}*/
+}
+
+/* GERAL */
+
+body {
+    background-color: #0b0b34;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #04041a;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 header {
     background-color: #d6d6de;
@@ -14,41 +28,375 @@ header {
     align-items: center;
 
     padding: 0 5%;
+    margin-bottom: 5px;
 }
 
 header img {
     height: 32px;
 }
 
+header h1 {
+    font-size: 36px;
+}
+
 header a{
     text-decoration: none;
     color: inherit;
 }
-
-body {
-    background-color: #0b0b34;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    color: #04041a;
-
+.logo {
     display: flex;
+    align-items: center;
+}
+
+.add-button {
+    color: #d6d6de;
+    font-size: 30px;
+    background-color: #a61b63;
+
+    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease-in-out;
+}
+
+.add-button:hover {
+    background-color: #7e1149;
 }
 
 main {
     flex-grow: 1;
-}
-
-.poster {
-    width: 200px;
-    border-radius: 12px;
-}
-
-.livros-card {
-    background-color: #d6d6de;
+    margin: 20px;
 }
 
 footer {
     color: #d6d6de;
     text-align: center;
+    font-size: 16px;
+    padding: 15.25px;
+}
+
+footer p {
+    margin-top: 5px;
+}
+
+.link-repositorio {
+    color: #7757a4;
+    text-decoration: none;
+}
+
+.link-repositorio:hover {
+    text-decoration: underline;
+}
+
+/* INDEX */
+
+.livros-container {
+    padding: 26px 20px;
+    max-width: 1040px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 50px;
+}
+
+.livros-card {
+    background-color: #d6d6de;
+    width: 210px;
+
+    border: 1px solid #0b0b34;
+    border-radius: 12px;
+
+    text-align: center;
+    font-size: 16px;
+
+    box-shadow: 0px 4px 4px 0px #ffffff60;
+
+    transition: box-shadow 0.3s ease-in-out;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.livros-card:hover {
+    box-shadow: 0px 8px 16px 0px #ffffff60;
+}
+
+.livros-card img{
+    width: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 5px;
+}
+
+.livros-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 19px;
+    margin-bottom: 12px;
+}
+
+.livros-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.autor {
+    margin-top: 4px;
+}
+
+.rating {
+    color: #a61b63;
+    font-size: 20px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 1px #a61b63;
+}
+
+.empty-star {
+    color: #d6d6de;
+}
+
+/* ADD BOOK */
+
+.new-book {
+    text-align: center;
+    color: #d6d6de;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 60px auto;
+
+    background-color: #d6d6de;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px #ffffff60;
+
+    padding: 33px 61px;
+
+    display: flex;
+    flex-direction: column;
+
+    animation: fadeInDown 0.8s ease-in-out forwards;
+}
+
+.pergunta {
+    margin-bottom: 34px;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.pergunta label {
+    margin-bottom: 6px;
+    font-size: 24px;
+}
+
+.pergunta input,
+.pergunta select,
+.pergunta textarea {
+    border-radius: 12px;
+    border: 1px solid #b4b4ca;
+
+    width: 100%;
+
+    padding: 12px;
+
+    font-size: 14px;
+    color: #b4b4ca;
+}
+
+.pergunta select,
+.data {
+    color: #61617a;
+}
+
+.juntinhos {
+    display: flex;
+    gap: 20px;
+}
+
+.enviar-button{
+    background-color: #0b0b34;
+    color: #d6d6de;
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 20px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease-in-out;
+}
+
+.enviar-button:hover{
+    background-color: #181865;
+}
+
+/* DETAILS */
+
+.detalhes-container {
+    max-width: 1200px;
+    margin: 55px auto;
+
+    background-color: #d6d6de;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px #ffffff60;
+
+    padding: 48px 90px 86px;
+    
+    animation: entrada 0.8s ease-in-out forwards;
+}
+
+.area-livro {
+    display: flex;
+    flex-direction: row;
+    gap: 65px;
+    align-items: flex-start;
+}
+
+.area-livro h1 {
+    margin-bottom: 5px;
+}
+
+.poster img {
+    width: 380px;
+    border-radius: 12px;
+}
+
+.poster {
+    flex-shrink: 0;
+}
+
+.voltar a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #04041a;
+}
+
+.voltar {
+    margin-bottom: 20px;
+}
+
+.voltar:hover{
+    text-decoration: underline;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-details {
+    display: flex;
+    align-items: baseline;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 540px){
+    /* Página Inicial */
+    .livros-container{
+        justify-content: center;
+    }
+
+    /* Adicionar Review*/
+    .form-container{
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .new-book{
+        font-size: 30px;
+    }
+
+    .add-form {
+        padding: 25px 20px;
+    }
+
+    .pergunta label {
+        font-size: 20px;
+    }
+
+    .juntinhos{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .enviar-button{
+        margin-bottom: 10px;
+    }
+
+    /* Detalhes */
+    .detalhes-container{
+        padding: 20px;
+        margin: 30px 15px;
+    }
+
+    .area-livro {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .voltar {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .poster img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .review h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .rating {
+        font-size: 20px;
+    }
+}
+
+/* KEYFRAMES */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

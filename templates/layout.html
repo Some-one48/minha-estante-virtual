@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    {% block title %} EVir {% endblock %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+        <nav>
+            <a href="{{url_for('index')}}">
+                <img src="{{url_for('static', filename='assets/images/logo-mevir.png')}}" alt="Logo de 'Minha Estante Virtual'">
+                <h1>EVir</h1>
+            </a>
+        </nav>
+        </div>
+
+        <nav>
+            <a href="{{url_for('show_add_form')}}">
+                <button class="add-button" aria-label="Adicione um novo livro">+</button>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+     <footer>
+        <a class="link-repositorio" href="https://github.com/Some-one48/minha-estante-virtual" target="_blank">Repositório no GitHub</a>
+        <p>&copy; 2025 EVir &ndash; Minha Estante Virtual</p>
+    </footer>
+</body>
+
+</html>

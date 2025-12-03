@@ -1,43 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+{% extends 'layout.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
-    <title>EVir - Home</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+{% block title %} EVir - Home {% endblock %}
 
-<body>
-    <header>
-        <div class="logo">
-        <nav>
-            <a href="index.html">
-                <img src="assets/images/logo-mevir.png" alt="Logo de 'Minha Estante Virtual'">
-                <h1>EVir</h1>
-            </a>
-        </nav>
-        </div>
+{% block content %}
+    <div class="livros-container">
+        {% for book in books %}
 
-        <nav>
-            <a href="pages/add-book.html">
-                <button class="add-button" aria-label="Adicione um novo livro">+</button>
-            </a>
-        </nav>
-    </header>
+        <a href="{{ url_for('details-padrao', id=book.id) }}"></a>
+            <div class="livros-card">    
+                <img src="{{ book.poster }}" alt="Capa do Livro '{{book.title}}', por {{book.author}}">
+                <h3>{{book.title}}</h3>
+                <p class="autor"><i>Por: {{book.author}}</i></p>
+                <div class="rating">
+                    {% for i in range(5) %}
+                        {% if (i+1) <= (book.rating|int) %}
+                            <span>★</span>
+                        {% else %}
+                            <span class="empty-star">★</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
 
-    <main>
-        <div class="livros-container">
-
-            <div class="livros-card">
-                <a href="pages/details-padrao.html">
-                    <img src="assets/images/amanhecer-na-colheita.png" alt="Capa do Livro 'Amanhecer na Colheita', por Suzanne Collins">
-                    <h3>Amanhecer na Colheita</h3>
-                    <p class="autor"><i>Por: Suzanne Collins</i></p>
-                    <p class="rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span> 5</p>
-                </a>
-            </div> 
-
+            <!--
             <div class="livros-card">
                 <a href="pages/detalhes-morta.html">
                     <img src="assets/images/com-a-morta-no-porao.jpg" alt="Capa do Livro 'Com a Morta no Porão', por Eduardo Rodrigues">
@@ -63,15 +52,5 @@
                     <p class="autor"><i>Por: Serge Brussolo</i></p>
                     <p class="rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
                 </a>
-            </div> 
-
-        </div>
-    </main>
-
-    <footer>
-        <a class="link-repositorio" href="https://github.com/Some-one48/minha-estante-virtual" target="_blank">Repositório no GitHub</a>
-        <p>&copy; 2025 EVir &ndash; Minha Estante Virtual</p>
-    </footer>
-</body>
-
-</html>
+            </div>
+        -->

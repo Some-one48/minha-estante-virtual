@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block title %} EVir - Nova Resenha {% endblock %}
+
+{% block content %}
+    <h2 class="new-book">Nova Resenha</h2>
+    <div class="form-container">
+        <form action="{{url_for('add_book')}}" method="POST" class="add-form" >
+            <div class="pergunta">
+                <label for="nome-livro">Nome do Livro:</label>
+                <input id="nome-livro" type="text" name="title" placeholder="Digite o nome do livro">
+            </div>
+
+            <div class="pergunta">
+                <label for="nome-autor">Nome do Autor:</label>
+                <input id="nome-autor" type="text" name="author" placeholder="Digite o nome do autor do livro">
+            </div>
+
+            <div class="pergunta">
+                <label for="poster_url">URL da Capa:</label>
+                <input id="poster_url" type="text" name="poster" placeholder="Cole o URL da imagem (jpg ou png)">
+            </div>
+
+            <div class="juntinhos">
+            <div class="pergunta">
+                <label for="data">Data de Conclusão:</label>
+                <input class="data" id="data" name="conclusion_date" type="date">
+            </div>  
+            
+            <div class="pergunta">
+                <label for="rating-select">Avalie</label>
+                <select id="rating-select" name="rating">
+                    <option value="" disabled selected>Como avalia este livro?</option>
+                    <option value="1">★☆☆☆☆ - 1 Estrela</option>
+                    <option value="2">★★☆☆☆ - 2 Estrelas</option>
+                    <option value="3">★★★☆☆ - 3 Estrelas</option>                        <option value="4">★★★★☆ - 4 Estrelas</option>
+                    <option value="5">★★★★★ - 5 Estrelas</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="pergunta">
+                <label for="resenha">Resenha:</label>
+                <textarea id="resenha" rows="5" name="review" placeholder="Escreva o que achou do livro"></textarea>
+            </div>
+            
+            <button type="submit" class="enviar-button">Adicionar</button>
+        </form>
+    </div>
+{% endblock %}

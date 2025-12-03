@@ -14,20 +14,20 @@ def index():
 
     return render_template("index.html", books=books)
 
-@app.get("/book/<int:id>")
-def details():
+@app.get("/book/<int:book_id>")
+def show_details(book_id):
     found_book = None
 
     with open('books.csv', mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
 
         for book in reader:
-            if int(book['id']) == id:
+            if int(book['id']) == book_id:
                 found_book = book
                 break
         
     if found_book:
-        return render_template("details-padrao.html", book=found_book)
+        return render_template("details.html", book=found_book)
     else:
         return "Book not found! / Livro não encontrado!", 404
 

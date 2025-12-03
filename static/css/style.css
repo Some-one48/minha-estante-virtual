@@ -142,6 +142,11 @@ footer p {
     color: inherit;
 }
 
+.card-link {
+    text-decoration: none;
+    color: inherit
+}
+
 .autor {
     margin-top: 4px;
 }

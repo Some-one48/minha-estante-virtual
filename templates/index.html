@@ -6,51 +6,22 @@
     <div class="livros-container">
         {% for book in books %}
 
-        <a href="{{ url_for('details-padrao', id=book.id) }}"></a>
-            <div class="livros-card">    
-                <img src="{{ book.poster }}" alt="Capa do Livro '{{book.title}}', por {{book.author}}">
-                <h3>{{book.title}}</h3>
-                <p class="autor"><i>Por: {{book.author}}</i></p>
-                <div class="rating">
-                    {% for i in range(5) %}
-                        {% if (i+1) <= (book.rating|int) %}
-                            <span>★</span>
-                        {% else %}
-                            <span class="empty-star">★</span>
-                        {% endif %}
-                    {% endfor %}
+            <a href="{{ url_for('show_details', book_id=book.id) }}" class="card-link">
+                <div class="livros-card">    
+                    <img src="{{ book.poster }}" alt="Capa do Livro '{{book.title}}', por {{book.author}}">
+                    <h3>{{book.title}}</h3>
+                    <p class="autor"><i>Por: {{book.author}}</i></p>
+                    <div class="rating">
+                        {% for i in range(5) %}
+                            {% if (i+1) <= (book.rating|int) %}
+                                <span>★</span>
+                            {% else %}
+                                <span class="empty-star">★</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
         {% endfor %}
     </div>
 {% endblock %}
-
-            <!--
-            <div class="livros-card">
-                <a href="pages/detalhes-morta.html">
-                    <img src="assets/images/com-a-morta-no-porao.jpg" alt="Capa do Livro 'Com a Morta no Porão', por Eduardo Rodrigues">
-                    <h3>Com a Morta no Porão</h3>
-                    <p class="autor"><i>Por: Eduardo Rodrigues</i></p>
-                    <p class="rating"><span>★</span><span>★</span><span>★</span><span>★</span><span class="empty-star">★</span></p>
-                </a>
-            </div> 
-
-            <div class="livros-card">
-                <a href="pages/detalhes-romeu.html">
-                    <img src="assets/images/romeu-e-julieta.jpg" alt="Capa do Livro 'Romeu e Julieta', por William Shakespeare">
-                    <h3>Romeu e Julieta</h3>
-                    <p class="autor"><i>Por: William Shakespeare</i></p>
-                    <p class="rating"><span>★</span><span>★</span><span class="empty-star">★</span><span class="empty-star">★</span><span class="empty-star">★</span></p>
-                </a>
-            </div> 
-
-            <div class="livros-card">
-                <a href="pages/detalhes-cachorro-azul.html">
-                    <img src="assets/images/dia-do-cachorro-azul.jpg" alt="Capa do Livro 'O dia do cachorro azul', por Serge Brussolo">
-                    <h3>O dia do cachorro azul</h3>
-                    <p class="autor"><i>Por: Serge Brussolo</i></p>
-                    <p class="rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
-                </a>
-            </div>
-        -->
